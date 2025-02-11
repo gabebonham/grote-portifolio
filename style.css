@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+	--hover-position: 100px;
+}
+.edu-qld-beginner-siteFont * {
+	font-family: 'Silkscreen', serif;
+	font-size: 14px;
+	font-weight: 100;
+	font-style: normal;
+}
+
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+.bgImg {
+	padding: 0;
+	margin: 0;
+	background-image: url('./back6.gif');
+	background-repeat: no-repeat;
+
+	background-size: cover;
+}
+.bgOpacity {
+	background-color: rgba(0, 0, 0, 0.5);
+	/* backdrop-filter: blur(4px); */
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+header {
+	width: 100%;
+	height: 70px;
+	/* background-color: rgba(0, 0, 0, 0.4); */
+	/* background-color: rgba(15, 14, 15, 0.836); */
+	/* background: linear-gradient(
+		155deg,
+		rgba(19, 11, 24, 0.639) 0%,
+		rgba(52, 32, 54, 0.678) 18%,
+		rgba(162, 143, 167, 0.704) 75%
+	); */
+	/* background: linear-gradient(
+		155deg,
+		rgb(39, 33, 39) 0%,
+		rgb(78, 58, 78) 58%,
+		rgb(85, 51, 85) 85%
+	); */
+	background-color: rgb(0, 0, 0);
+	backdrop-filter: blur(7px);
+	padding: 10px 40px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	display: inline-flex;
+	color: white;
+	z-index: 100;
+}
+header::after {
+	content: '';
+	width: 60%;
+	background-color: rgba(199, 179, 195, 0.637);
+	height: 2px;
+	justify-self: start;
+	position: absolute;
+	top: 68px;
+}
+header img {
+	width: 70px;
+	height: 70px;
+	filter: invert(100%) grayscale(50%) brightness(80%);
+}
+header ul {
+	list-style-type: none;
+	display: inline-flex;
+	font-size: 16px;
+	gap: 40px;
+}
+header ul li a {
+	font-size: 25px;
+	color: white;
+	text-decoration: none;
+}
+header .headerContent {
+	display: inline-flex;
+	align-items: center;
+	justify-content: end;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+#navHover {
+	transition: transform 1s ease;
+	width: 100px;
+	height: 2px;
+	/* background-color: rgba(147, 100, 156, 0.397); */
+	background-color: white;
+	position: absolute;
+	right: 320px;
+	border-radius: 40px;
+	top: 75px;
+}
+.navBtn {
+	background-color: transparent;
+	color: white;
+	border-width: 0;
+	font-size: 25px;
+}
+#section1 {
+	width: 100%;
+	box-sizing: border-box;
+	overflow: visible;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	height: 700px;
+	justify-content: center;
+}
+#meImg {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	outline: 3px solid gray;
+	outline-offset: 3px;
+	width: 400px;
+	animation: fadeIn 1.5s ease forwards, slideIn 3s ease forwards;
+	/* filter: hue-rotate(240deg) contrast(70%) brightness(01) saturate(100%); */
+	filter: grayscale(100%);
+	height: 550px;
+}
+#meImgDiv {
+	width: 100%;
+	background-color: red;
+	overflow: visible;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1; /* End with blur and brightness */
+	}
+}
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 1; /* End with blur and brightness */
+	}
+	70% {
+		opacity: 1; /* End with blur and brightness */
+	}
+	100% {
+		opacity: 0; /* End with blur and brightness */
+	}
+}
+@keyframes slideIn {
+	from {
+		transform: translateX(200px); /* Start off-screen */
+	}
+	to {
+		transform: translateX(400px); /* Move to the final position */
+	}
+}
+@keyframes slideInDesRight {
+	from {
+		transform: translateX(10px); /* Start off-screen */
+	}
+	to {
+		transform: translateX(100px); /* Move to the final position */
+	}
+}
+@keyframes slideInDesLeft {
+	from {
+		transform: translateX(10px); /* Start off-screen */
+	}
+	to {
+		transform: translateX(-200px); /* Move to the final position */
+	}
+}
+@keyframes slideDownTitle {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px); /* Start off-screen */
+		transform: scale(70%);
+	}
+	30% {
+		opacity: 1;
+		transform: scale(100%);
+		transform: translateY(50px); /* Move to the final position */
+	}
+	70% {
+		opacity: 1;
+		transform: scale(100%);
+		transform: translateY(50px); /* Move to the final position */
+	}
+	100% {
+		opacity: 0;
+		transform: scale(10%);
+		transform: translateY(100px); /* Move to the final position */
+		display: none;
+	}
+}
+@keyframes bgFade {
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+.glitch-text {
+	font-size: 5rem;
+	font-weight: bold;
+	position: relative;
+	color: #fff;
+	animation: glitch 2s infinite, slideDownTitle 4s ease-in-out forwards,
+		fadeInOut 4s ease-in-out;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+	content: 'Olá! Me chamo Gabriel Grote';
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #ff005e;
+	background: transparent;
+	clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+	animation: glitch 2s infinite;
+}
+
+.glitch-text::after {
+	color: #00d4ff;
+	clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+	0%,
+	100% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translate(-2px, 2px);
+	}
+	40% {
+		transform: translate(2px, -2px);
+	}
+	60% {
+		transform: translate(-1px, 1px);
+	}
+	80% {
+		transform: translate(1px, -1px);
+	}
+}
+
+#backDes {
+	opacity: 0;
+	color: rgb(207, 226, 211);
+	position: absolute;
+	width: 400px;
+	font-size: 20px;
+	font-weight: bold;
+	left: 0;
+	top: 100px;
+	animation: slideInDesRight 3s ease-in 3s forwards,
+		fadeIn 3s ease-in 3s forwards;
+}
+#frontDes {
+	opacity: 0;
+	color: rgb(207, 226, 211);
+	position: absolute;
+	width: 400px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: end;
+	left: 650px;
+	top: 250px;
+	animation: slideInDesLeft 3s ease-in 3s forwards,
+		fadeIn 3s ease-in 3s forwards;
+}
+#otherDes {
+	opacity: 0;
+	color: rgb(207, 226, 211);
+	position: absolute;
+	width: 400px;
+	font-size: 20px;
+	font-weight: bold;
+	top: 400px;
+	left: 0px;
+	animation: slideInDesRight 3s ease-in 3s forwards,
+		fadeIn 3s ease-in 3s forwards;
+}
+#section2 {
+	padding: 0;
+	margin: 0;
+	background-color: black;
+	color: white;
+	padding-bottom: 200px;
+}
+.bgImg2 {
+	background-image: url('./back9.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+.blackDiv {
+	background-color: black;
+	width: 100%;
+	height: 150px;
+}
+#backTitleDiv {
+	background-color: black;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: bgFade 4s ease forwards;
+	overflow: hidden;
+}
+#helloDes {
+	position: absolute;
+	font-size: 80px;
+	font-weight: 900;
+	color: white;
+	animation: slideDownTitle 2s ease-in forwards;
+}
+#section3 {
+	padding: 0;
+	margin: 0;
+
+	color: white;
+}
+#aboutDiv {
+	font-size: 23px;
+
+	width: 500px;
+}
+#aboutDiv2 {
+	font-size: 18px;
+	width: 700px;
+	text-align: end;
+}
+#aboutDiv3 {
+	font-size: 18px;
+	width: 900px;
+	text-align: center;
+	justify-self: center;
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+#aboutRow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+#aboutRow2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+
+#section3 img {
+	width: 400px;
+	height: 500px;
+}
+#section2 #mainTech img {
+	width: 250px;
+	height: auto;
+	filter: contrast(0%) brightness(120%);
+}
+#section2 #mainTech img:hover {
+	transition: filter 1s ease;
+	filter: brightness(0) invert(1);
+}
+#section2 #perTech img:hover {
+	transition: filter 1s ease;
+	filter: brightness(0) invert(1);
+}
+#section2 #perTech img {
+	width: 80px;
+	height: auto;
+	filter: contrast(0%) brightness(120%);
+	border-radius: 5px;
+}
+#section2 #mainTech div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#section2 h1 {
+	font-size: 35px;
+	margin: 0;
+	padding: 0;
+}
+#section2 {
+	padding: 40px 40px;
+}
+#section2 .tech1 {
+	animation: slideRightImg 3s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech2 {
+	animation: slideRightImg 4s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech3 {
+	animation: slideRightImg 5s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech4 {
+	animation: slideRightImg 6s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech5 {
+	animation: slideRightImg 7s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech6 {
+	animation: slideRightImg 8s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech7 {
+	animation: slideRightImg 9s ease-in forwards, fadeIn 3s ease-in forwards;
+}
+#section2 .tech8 {
+	animation: slideRightImg 10s ease-in forwards,
+		fadeIn 3s ease-in forwards;
+}
+#section2 .tech9 {
+	animation: slideRightImg 11s ease-in forwards,
+		fadeIn 3s ease-in forwards;
+}
+@keyframes slideRightImg {
+	0% {
+		transform: translateX(-100px);
+	}
+	30% {
+		transform: translateX(0px);
+	}
+}
+#section2 #appTypes {
+	padding-top: 50px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+	gap: 50px; /* Spacing between grid items */
+}
+#section2 #appTypes h3 {
+	text-align: center;
+	filter: contrast(0%) brightness(120%);
+	font-size: 25px;
+}
+#section2 #appTypes h3:hover {
+	transition: filter 1s ease;
+	filter: brightness(0) invert(1);
+}
+#section2 #mainTech {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+	gap: 16px; /* Spacing between grid items */
+}
+#section2 #perTech {
+	display: grid;
+	padding: 50px;
+	grid-template-columns: repeat(4, 1fr);
+	row-gap: 100px;
+	column-gap: 10px;
+}
+#section2 pre {
+	justify-self: center;
+	font-size: 20px;
+}
+#section2 #perTech div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+pre .b {
+	color: blue;
+}
+
+pre .g {
+	color: green;
+}
+#section2 #periferics {
+	display: grid;
+	padding: 50px;
+	grid-template-columns: repeat(4, 1fr);
+	row-gap: 100px;
+	column-gap: 10px;
+}
+#section2 #periferics h3 {
+	text-align: center;
+	filter: contrast(0%) brightness(120%);
+}
+#section2 #periferics h3:hover {
+	transition: filter 1s ease;
+	filter: brightness(0) invert(1);
+}
+#section4 {
+	background-color: rgb(26, 24, 25);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#section4 #gridContainer {
+	display: grid;
+	padding: 50px;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 100px;
+	column-gap: 100px;
+}
+#section4 #gridContainer img {
+	width: 300px;
+	height: 200px;
+	border-radius: 10px;
+	position: relative;
+	bottom: 0;
+	transition: bottom 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
+	outline: solid 2px rgba(255, 255, 255, 0.747);
+	outline-offset: 4px;
+}
+#section4 #gridContainer .projCard:hover img {
+	bottom: 20px;
+	outline-offset: 0px;
+}
+#section4 #gridContainer .projCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#section4 #gridContainer .projCard a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+}
+#section4 #gridContainer .projCard a * {
+	text-align: center;
+}
+#section4 {
+	padding: 40px 40px;
+}
+#section4 * {
+	color: white;
+}
+#section4 h1 {
+	font-size: 35px;
+	margin: 0;
+	padding: 0;
+}
